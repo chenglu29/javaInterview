@@ -9,7 +9,7 @@ public class ransomnote {
 			HashMap<String, Integer> hm=new HashMap<String,Integer>();
 			for(int i=0;i<magazine.size();i++){
 				if(hm.containsKey(magazine.get(i))){
-					hm.put(magazine.get(i),hm.get(magazine.get(i)+1));
+					hm.put(magazine.get(i),hm.get(magazine.get(i))+1);
 				}
 				else{
 					hm.put(magazine.get(i),1);
