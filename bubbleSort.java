@@ -1,6 +1,4 @@
-// Java program to find minimum number of 
-// characters to be removed to make two 
-// strings anagram. 
+
 import java.util.*; 
   
 class bubbleSort { 
