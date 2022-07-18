@@ -9,10 +9,10 @@ An island is surrounded by water and is formed by connecting adjacent lands hori
 class numberofisland{
 	public static void main(String[] args){
 		int[][] M = {{1, 1, 0, 0, 0},
-                     {1, 1, 0, 0, 1},
-                     {1, 0, 0, 1, 1},
-                     {0, 0, 0, 0, 1},
-                     {1, 0, 1, 0, 1}};
+                             {1, 1, 0, 0, 1},
+                     	     {1, 0, 0, 1, 1},
+                     	     {0, 0, 0, 0, 1},
+                             {1, 0, 1, 0, 1}};
         int height=M.length;
         int width=M[0].length;
         int numberofislands=0;
