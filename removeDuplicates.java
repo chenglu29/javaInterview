@@ -2,7 +2,7 @@ package interview;
 
 public class removeDuplicates {
 
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//System.out.println("Hello World!");
 		char str[]=new char[11];
@@ -46,5 +46,37 @@ public class removeDuplicates {
 		System.out.println(str[8]);
 		System.out.println(str[9]);
 		System.out.println(str[10]);
-	}
+	} */
+	
+	
+	
+	
+	static void removeDups(int[] a, int n)
+    {
+ 
+        // Hash map which will store the
+        // elements which has appeared previously.
+        HashMap<Integer, Boolean> mp = new HashMap<>();
+ 
+        for (int i = 0; i < n; ++i) {
+ 
+            // Print the element if it is not
+            // present there in the hash map
+            // and Insert the element in the hash map
+            if (mp.get(a[i]) == null)
+            {
+                System.out.print(a[i] + " ");
+                mp.put(a[i], true);
+            }
+        }
+    }
+ 
+    // Driver Code
+    public static void main(String[] args)
+    {
+        int[] arr = { 1, 2, 5, 1, 7, 2, 4, 2 };
+       
+        int n = arr.length;
+        removeDups(arr, n);
+    }
 }
