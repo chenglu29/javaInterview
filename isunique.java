@@ -1,20 +1,44 @@
-//implement an algorithm to determine if a string has all unique characters
-class isunique{
-public static boolean isUnique(String str){
-	if(str.length()>256) return false;
-	boolean[] char_set=new boolean[256];
-	for(int i=0;i<str.length();i++)
-	{
-		int val=str.charAt(i);
-		if(char_set[val])
-			return false;
-		char_set[val]=true;
-	}
-	return true;
-}
-public static void main(String[] args)
-{
-	
-	System.out.println(isUnique("abcc"));
-}
+// Java program to check string with unique
+// characters using sorting technique
+import java.util.*;
+ 
+class isunique {
+    /* Convert the string to character array
+       for sorting */
+    boolean uniqueCharacters(String str)
+    {
+        char[] chArray = str.toCharArray();
+ 
+        // Using sorting
+        // Arrays.sort() uses binarySort in the background
+        // for non-primitives which is of O(nlogn) time complexity
+        Arrays.sort(chArray);
+ 
+        for (int i = 0; i < chArray.length - 1; i++) {
+            // if the adjacent elements are not
+            // equal, move to next element
+            if (chArray[i] != chArray[i + 1])
+                continue;
+ 
+            // if at any time, 2 adjacent elements
+            // become equal, return false
+            else
+                return false;
+        }
+        return true;
+    }
+ 
+    // Driver code
+    public static void main(String args[])
+    {
+        isunique obj = new isunique();
+        String input = "GgG";
+ 
+        if (obj.uniqueCharacters(input))
+            System.out.println("The String " + input
+                               + " has all unique characters");
+        else
+            System.out.println("The String " + input
+                               + " has duplicate characters");
+    }
 }
