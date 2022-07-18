@@ -19,7 +19,7 @@ class numberofisland{
         for (int j=0;j<height;j++){
         	for(int k=0;k<width;k++){
         		if(M[j][k]==1){
-        			changezero(j,k,M);
+        			change(j,k,M);
         			numberofislands+=1;
         		}
         	}
@@ -27,15 +27,14 @@ class numberofisland{
         System.out.println(numberofislands);
 	}
 	public static void changezero(int i,int j, int [][]M){
-		if(i==M.length || j==M[0].length || i<0 || j<0)
+		if(i==M.length || j==M[0].length || i<0 || j<0 || M[i][j]!='1')
 			return;
-		if(M[i][j]==0)
-			return;
-		M[i][j]=0;
-		changezero(i+1,j,M);//check downward
-		changezero(i, i+1,M); //check right
-		changezero(i-1, j,M); //check upward
-		changezero(i,j-1,M); //chec left
+		M[i][j]=2;
+
+		change(i+1,j,M);//check downward
+		change(i, i+1,M); //check right
+		change(i-1, j,M); //check upward
+		change(i,j-1,M); //chec left
 
 	}
 }
